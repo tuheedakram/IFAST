@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+.center-wrapper{
+  text-align: center;
+}
+.center-wrapper * {
+  margin: 0 auto;
+}
+.responsive-image{
+        height:auto;
+        width:100%;
+    }
+</style>
+<style>
+      html, body, #map-canvas {
+        height: 80%;
+        margin: 0px;
+        padding: 0px
+      }
+    .google-maps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    </style>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+	
+$(document).on("pagecreate","#pageIsb",function(){
+  $("p").on("tap",function(){
+    $(this).hide();
+  });                       
+});
+
+  </script>
+ <script type="text/javascript">
+function functionOne() { 
+window.open("#mapIsb",'_self');
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'isbLoad' ) )
+    {
+      localStorage[ 'isbLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'isbLoad' );
+  }
+})();
+}
+function functionTwo() { 
+window.open("#mapLhr",'_self');
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'LahrLoad' ) )
+    {
+      localStorage[ 'LahrLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'LahrLoad' );
+  }
+})();
+}
+function functionThree() { 
+window.open("#mapKhi",'_self');
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'KhiLoad' ) )
+    {
+      localStorage[ 'KhiLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'KhiLoad' );
+  }
+})();
+}
+function functionFour() { 
+window.open("#mapPesh",'_self');
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'PeshLoad' ) )
+    {
+      localStorage[ 'PeshLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'PeshLoad' );
+  }
+})();
+}
+  </script>
+
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+ 
+  <div data-role="header">
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  </div>
+
+  <div data-role="main" class="ui-content">    
+    <ul data-role="listview"  >
+     <li><a href="#pageCampuses">Campuses</a></li>
+      <li><a href="#pageAdmission">Admissions</a></li>
+      <li><a href="#pageDepartments">Departments</a></li>
+    </ul>
+  </div>
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+
+<div data-role="page" id="pageCampuses">
+ 
+  <div data-role="header">
+ <a href="#pageone" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    
+    <ul data-role="listview"  >
+      <li><a href="#pageIsb">Islamabad</a></li>
+      <li><a href="#pageLhr">Lahore</a></li>
+      <li><a href="#pageKhi">Karachi</a></li>
+	  <li><a href="#pagePesh">Peshawar</a></li>
+    </ul>
+  </div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+
+<div data-role="page" id="pageIsb">
+ 
+ <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+<div data-role="main" class="ui-content">
+<img  src="style/images/IsbMap.PNG" border="0" class="responsive-image" alt="Null" onClick="functionOne();"/>
+</div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="mapIsb">
+ 
+ <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+<div data-role="main" class="ui-content">
+ <div class="google-maps">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13284.11884943488!2d73.016544!3d33.656392!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x42849753112383b!2sNational+University+of+Computer+%26+Emerging+Sciences!5e0!3m2!1sen!2s!4v1424882419651" width="600" height="450" frameborder="0" style="border:0"></iframe>
+</div>
+</div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="pageLhr">
+ 
+  <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+ <div data-role="main" class="ui-content">
+<img  src="style/images/lhrMap.PNG" border="0" class="responsive-image" alt="Null" onClick="functionTwo();"/>
+</div>
+ 
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="mapLhr">
+ 
+  <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div class="google-maps">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3402.5670836075105!2d74.303388!3d31.481092999999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903f08ebc7e8b%3A0x47e934f4cd34790!2sNational+University+of+Computer+and+Emerging+Sciences!5e0!3m2!1sen!2s!4v1424851875401" width="800" height="600" frameborder="0" style="border:0"></iframe>
+   </div>
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="pageKhi">
+ 
+  <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+ <div data-role="main" class="ui-content">
+<img  src="style/images/KhiMap.PNG" border="0" class="responsive-image" alt="Null" onClick="functionThree();"/>
+</div>
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="mapKhi">
+ 
+  <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div class="google-maps">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57917.15520023478!2d67.25930365942384!3d24.869921470804254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x823a6a0100195ffd!2sFAST+-+National+University+of+Computer+%26+Emerging+Sciences!5e0!3m2!1sen!2s!4v1424851956135" width="800" height="600" frameborder="0" style="border:0"></iframe>
+   </div>
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="pagePesh">
+ 
+  <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+ <div data-role="main" class="ui-content">
+<img  src="style/images/peshMap.PNG" border="0" class="responsive-image" alt="Null" onClick="functionFour();"/>
+</div>
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="mapPesh">
+ 
+  <div data-role="header">
+ <a href="#pageCampuses" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div class="google-maps">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3308.469789192493!2d71.427183!3d33.980464999999995!3m2!1i1024!2i768!4f13.1!2m1!1sfast+nu+Peshawar!5e0!3m2!1sen!2s!4v1424852168417" width="800" height="600" frameborder="0" style="border:0"></iframe>
+  </div>
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+
+<div data-role="page" id="pageAdmission">
+ 
+  <div data-role="header">
+ <a href="#pageone" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+	<table data-role="table" class="ui-responsive">
+      <thead>
+        <tr>
+          <th></th>
+          <th>BBA & BS</th>
+          <th>MBA, MS & PhD</th>
+          <th>PhD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Application Submission</td>
+          <td>Jun 9 - 28 (Mon-Sat)</td>
+          <td>Jun 9 - 28 (Mon-Sat)</td>
+          <td>Jan 31, 2015 (Sat)</td>
+        </tr>
+        <tr>
+          <td>Admission Tests</td>
+          <td>Jul 1 - 7 (Tue-Mon)</td>
+          <td>Jul 1 - 7 (Tue-Mon)</td>
+        </tr>
+        <tr>
+          <td>Declaration of selected Candidates</td>
+          <td>Jul 19 (Sat)</td>
+          <td>Jul 12 (Sat)</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Admission Formalities</td>
+          <td>Jul 21 - 24 (Mon-Thu)</td>
+          <td>Jul 28 - 30 (Mon-Wed)</td>
+          <td>-</td>
+         
+        </tr>
+      </tbody>
+    </table>
+   
+   
+  </div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+<div data-role="page" id="pageDepartments">
+  <div data-role="header">
+ <a href="#pageone" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+
+  <div data-role="main" class="ui-content">
+    <h4>Departments</h4>
+    <ul data-role="listview"  >
+      <li><a href="#CS">CS</a></li>
+      <li><a href="#EE">EE</a></li>
+	  <li><a href="#Mngmnt">Management</a></li>
+    </ul>
+  </div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+
+<div data-role="page" id="CS">
+  <div data-role="header">
+ <a href="#pageDepartments" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <h4>CS</h4>
+    <div data-role="collapsible">
+	<h1>BS</h1>
+      <p>The purpose of Computer Science degree programs is to produce computer scientists, who can form the backbone of the rapidly growing computer industry. The BS program is focused on developing an in depth understanding of both the theoretical and practical aspects of computer science through a rigorous course work spanning over a period of four years. Students are given unique opportunities to go beyond traditional computer science and get themselves involved in research activities through various research and industrial collaboration programs carried out at the campuses. This ensures a broad based educational foundation that prepares them for leadership roles along diverse career paths.</p>
+	</div>
+     <div data-role="collapsible">
+	<h1>MS</h1>
+      <p>The MS (Computer Science) comprises course work and research component. It has four 'core courses' aimed at strengthening the understanding and competence in computer science fundamentals. The University expects its MS graduates to pursue careers either as 'Computer Science Faculty Members' or as 'Software Development Managers' in the industry.</p>
+ </div>
+
+  </div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+
+<div data-role="page" id="EE">
+  <div data-role="header">
+ <a href="#pageDepartments" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <h4>EE</h4>
+    <div data-role="collapsible">
+	<h1>BS</h1>
+      <p>
+	  Students are offered courses in communication skills, engineering management and economics to prepare them for challenging environments. Social Science electives and courses in Professional Ethics contribute in enhancing the soft skills and help prepare a well rounded personality. The course work is supported by state of the art engineering labs. During four years, students work in twelve different labs where they perform experiments using state of the art instruments, equipment and simulation software.
+The offered specialization streams are :
+<ul>
+<li>Telecommunication Engineering </li>
+<li>Computer Engineering </li>
+<li>Electronics </li>
+</ul>
+	  </p></div>
+     <div data-role="collapsible">
+	<h1>MS</h1>
+      <p>This program prepares a graduate in Electrical Engineering to acquire expertise in a particular area. In the final year, the student normally undertakes a thesis. This may be undertaken in collaboration with the industry, under the guidance of industry experts and a faculty supervisor from the University.
+A student has the option to pursue MS by undertaking either a 6 credit hour MS Thesis or MS Project, spread over two regular semesters.</p>
+ </div>
+
+  </div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+
+<div data-role="page" id="Mngmnt">
+  <div data-role="header">
+ <a href="#pageDepartments" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+	<div class="center-wrapper">
+    <h1><img src="./style/images/logo.png" alt="Header" />NUCES</h1>
+  </div>
+  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext">Home Icon</a>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <h4>Management</h4>
+    <div data-role="collapsible">
+	<h1>BBA</h1>
+      <p>The Bachelor of Business Administration (BBA) program at FAST attempts to bring out dynamic managers and administrators, well-equipped to meet the challenges posed by this highly competitive global marketplace. To this end, the approach in the classroom is tailored to inculcate an appreciation for both the quantitative and qualitative dimensions of business. Quantitative skills developed through such areas as accounting, statistics, financial modelling and linear programming are combined with qualitative skills in communication, human psychology, marketing and organizational behaviour.</p>
+	</div>
+     <div data-role="collapsible">
+	<h1>MBA</h1>
+      <p>The Master of Business Administration (MBA) program is offered to those who have already completed the 4-year BBA program at FAST. This MBA program is designed to further hone the skills of graduates of the BBA program and it achieves this by focusing on the more strategic, specialized and advanced courses across the functional areas of business. Additionally, this intellectually-stimulating program is designed with a view to 'researching' local & regional management phenomena rather than merely 'studying' them</p>
+ </div>
+
+  </div>
+
+  <div data-role="footer">
+    <h1>All Rights Reserved</h1>
+  </div>
+</div>
+</body>
+</html>
