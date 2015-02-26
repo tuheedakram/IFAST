@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "1329608"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>IFAST-NUCES</name>
+
+    <description>
+        A smart phone app for FAST-NU Visters
+    </description>
+
+    <author href="https://www.facebook.com/tuheed.akram" email="tuheed.akram@gmail.com">
+       Tauheed Akram
+    </author>
+
+</widget>
